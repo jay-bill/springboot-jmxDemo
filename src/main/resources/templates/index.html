@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Spring Boot Contacts</h2>
+	<form method="post">
+		<label for="id">Id:</label>
+		<input type="text" name="id"/><br/>
+		<label for="name">Name:</label>
+		<input type="text" name="name"/><br/>		
+		<label for="age">Age:</label>
+		<input type="text" name="age"/><br/>
+		<input type="submit"/>
+	</form>
+	<ul th:each="contact:${users}">
+		<li>
+			<span th:text="${contact.id}">id</span>
+			<span th:text="${contact.name}">name</span>：
+			<span th:text="${contact.age}">age</span>，
+		</li>
+	</ul>
+</body>
+</html>
